@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaby Bello · Nail Designer em Ipanema</title>
+<meta name="description" content="Gaby Bello, nail designer em Ipanema (Rio de Janeiro). Especialista em alongamentos, nail art e unhas de noiva. Atendimento em português, inglês e espanhol. Agende pelo WhatsApp.">
+<meta name="theme-color" content="#5E1626">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#F6E9E3; --nude:#EBD3C9; --rose:#D9A79A; --petal:#FBF5F2; --cherry:#7A1E2E; --wine:#5E1626; --ink:#2A1418;
+  --gold:#B8935A; --muted:#7D6466; --line:rgba(94,22,38,.14);
+  --serif:'Bodoni Moda',Didot,Georgia,serif; --sans:'Manrope',system-ui,sans-serif; --script:'Pinyon Script',cursive;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--petal);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:var(--cherry);color:#fff}
+.wrap{width:min(1240px,92vw);margin:0 auto}
+.script{font-family:var(--script);font-weight:400;color:var(--cherry);letter-spacing:0}
+.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;font-weight:600;color:var(--cherry);display:inline-flex;align-items:center;gap:.9em}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.h-xl{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,7.4vw,7rem);line-height:.98;letter-spacing:-.02em}
+.h-lg{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.02;letter-spacing:-.015em}
+.h-lg em,.h-xl em{font-style:italic;color:var(--cherry)}
+.lead{font-size:clamp(1.02rem,1.3vw,1.18rem);color:var(--muted);max-width:56ch}
+.chapter{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--cherry);display:block;margin-bottom:1.1rem}
+
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--cherry);z-index:100}
+
+/* loader */
+.loader{position:fixed;inset:0;z-index:200;background:var(--wine);display:grid;place-items:center;color:var(--blush)}
+.loader__sig{font-family:var(--script);font-size:clamp(3.6rem,12vw,7.5rem);line-height:1.2;clip-path:inset(0 100% 0 0);padding:0 .2em}
+.loader__sub{text-align:center;font-size:.7rem;letter-spacing:.5em;text-transform:uppercase;opacity:0;margin-top:.4rem;padding-left:.5em}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;padding:1.1rem 0;transition:background .5s var(--ease),padding .5s var(--ease),transform .5s var(--ease)}
+.nav.is-solid{background:rgba(251,245,242,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:.7rem 0;border-bottom:1px solid var(--line)}
+.nav.is-hidden{transform:translateY(-110%)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand b{font-family:var(--script);font-weight:400;font-size:2rem;color:var(--wine);line-height:.9}
+.brand small{font-size:.56rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.nav__right{display:flex;align-items:center;gap:1.4rem}
+.nav__links{display:flex;gap:1.8rem;font-size:.84rem;font-weight:500}
+.nav__links a{position:relative}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(255,255,255,.5)}
+.lang button{font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:.35rem .6rem;border-radius:999px;color:var(--muted);transition:all .3s}
+.lang button[aria-pressed="true"]{background:var(--wine);color:#fff}
+@media (max-width:980px){.nav__links{display:none}}
+@media (max-width:560px){.nav .btn--sm{display:none}}
+
+/* buttons */
+.btn{--bg:var(--wine);--fg:#fff;position:relative;display:inline-flex;align-items:center;gap:.75rem;padding:1.05rem 1.6rem;border-radius:999px;background:var(--bg);color:var(--fg);font-weight:600;font-size:.94rem;overflow:hidden;isolation:isolate}
+.btn::before{content:"";position:absolute;inset:0;background:var(--cherry);border-radius:inherit;transform:translateY(101%);transition:transform .55s var(--ease);z-index:-1}
+.btn:hover::before{transform:translateY(0)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn--ghost{background:transparent;color:var(--wine);border:1px solid var(--wine)}
+.btn--ghost::before{background:var(--wine)}
+.btn--ghost:hover{color:#fff}
+.btn--light{--bg:var(--blush);--fg:var(--wine)}
+.btn--light:hover{color:#fff}
+.btn--sm{padding:.7rem 1.15rem;font-size:.82rem}
+
+/* hero (pinned, nails get painted by scroll) */
+.hero{position:relative;background:radial-gradient(120% 90% at 70% 40%,#FFF 0%,var(--blush) 55%,#EFD9D0 100%)}
+.hero__pin{height:100svh;min-height:620px;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;padding-top:4rem}
+.hero__title .line{display:block;overflow:hidden;padding-bottom:.08em}
+.hero__title .line>span{display:inline-block}
+.hero__title .script{font-size:1.25em;line-height:.8;display:inline-block;padding-right:.1em}
+.hero__sub{margin:1.8rem 0 2.2rem}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:2.4rem;font-size:.8rem;color:var(--muted)}
+.hero__meta span{display:flex;align-items:center;gap:.45rem}
+.hero__meta i{color:var(--gold);font-style:normal}
+.hands{width:100%;max-width:600px;justify-self:center;overflow:visible}
+.hands .bare{fill:var(--nude);stroke:rgba(94,22,38,.25);stroke-width:1.5}
+.hands .finger{fill:url(#fg)}
+.hands .gloss{fill:#fff;opacity:.55}
+.hint{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:.6rem;white-space:nowrap}
+.hint svg{width:16px;height:16px;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+.palette{position:absolute;right:4vw;bottom:2rem;display:flex;flex-direction:column;gap:.5rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.palette div{display:flex;align-items:center;gap:.6rem;opacity:.25;transition:opacity .4s}
+.palette div.on{opacity:1}
+.palette i{width:14px;height:14px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:0;padding-top:5rem}
+  .hands{max-width:330px;order:-1;margin-bottom:-.5rem}
+  .hero__sub{margin:1.2rem 0 1.6rem}
+  .hero__meta,.palette{display:none}
+  .hint{display:none}
+}
+
+/* chapter I */
+.story{background:var(--wine);color:var(--blush);padding:clamp(6rem,14vw,11rem) 0;position:relative;overflow:hidden}
+.story .chapter{color:#E9A9B2}
+.story__text{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.8rem);line-height:1.18;max-width:22ch;letter-spacing:-.01em}
+.story__text .w{opacity:.14}
+.story__text em{font-style:italic;color:#F2C3C9}
+.story__ring{position:absolute;right:-8vw;top:50%;width:46vw;max-width:640px;aspect-ratio:1;transform:translateY(-50%);opacity:.12}
+
+/* chapter II: services, vertical cards w/ drawings */
+.svc{background:var(--blush);padding:clamp(6rem,12vw,10rem) 0}
+.svc__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:4rem;align-items:start}
+.svc__head{position:sticky;top:18vh}
+.svc__count{display:flex;align-items:center;gap:1rem;margin-top:2.4rem;font-family:var(--serif)}
+.svc__count b{font-weight:400;font-size:3.2rem;line-height:1;min-width:2ch;color:var(--wine)}
+.svc__count small{color:var(--muted)}
+.svc__bar{flex:1;max-width:180px;height:1px;background:var(--line);position:relative;overflow:hidden}
+.svc__bar i{position:absolute;inset:0;background:var(--cherry);transform-origin:left;transform:scaleX(0)}
+.svc__list{display:flex;flex-direction:column;gap:1.6rem}
+.sc{border-radius:200px 200px 28px 28px;padding:clamp(1.6rem,2.6vw,2.4rem);padding-top:clamp(2.4rem,4vw,3.4rem);display:grid;grid-template-columns:.9fr 1.1fr;gap:1.8rem;align-items:center;background:var(--petal);border:1px solid var(--line);min-height:300px}
+.sc:nth-child(even){border-radius:28px 28px 200px 200px;padding-top:clamp(1.6rem,2.6vw,2.4rem);padding-bottom:clamp(2.4rem,4vw,3.4rem)}
+.sc__art{aspect-ratio:1;max-width:240px;width:100%;justify-self:center;border-radius:50%;background:var(--blush);display:grid;place-items:center;padding:1rem}
+.sc__art svg{width:100%;height:100%;overflow:visible}
+.sc .ln{fill:none;stroke:var(--wine);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.sc .ac{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.sc .lq{fill:var(--cherry)}
+.sc .lq2{fill:var(--rose)}
+.sc .nd{fill:var(--nude)}
+.sc__n{font-family:var(--serif);font-style:italic;color:var(--cherry);display:block;margin-bottom:.6rem}
+.sc h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,2.6vw,2.3rem);line-height:1.05;margin-bottom:.8rem;color:var(--wine)}
+.sc p{color:var(--muted)}
+.sc__tag{display:inline-block;margin-top:1rem;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+@media (max-width:900px){.svc__grid{grid-template-columns:1fr;gap:2.4rem}.svc__head{position:static}.svc__count{display:none}.sc,.sc:nth-child(even){grid-template-columns:1fr;border-radius:120px 120px 24px 24px;text-align:center}.sc__art{max-width:200px}}
+
+/* chapter III: brides */
+.bride{background:var(--ink);color:var(--blush);padding:clamp(6rem,12vw,10rem) 0;position:relative;overflow:hidden}
+.bride .chapter{color:#E9A9B2}
+.bride .h-lg{color:var(--blush)}
+.bride .h-lg em{color:#F2C3C9}
+.bride__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.bride .lead{color:rgba(246,233,227,.72);margin:1.6rem 0 2.2rem}
+.bride__art{position:relative;aspect-ratio:1;max-width:480px;justify-self:center;width:100%}
+.bride__art svg{width:100%;height:100%;overflow:visible}
+.bride__list{list-style:none;display:grid;gap:1rem;margin-bottom:2.4rem}
+.bride__list li{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1rem;border-bottom:1px solid rgba(246,233,227,.14)}
+.bride__list b{font-family:var(--serif);font-weight:400;font-size:1.25rem;display:block;color:#fff}
+.bride__list span{font-size:.92rem;color:rgba(246,233,227,.65)}
+.bride__list i{font-style:normal;color:var(--gold);font-family:var(--serif);font-size:1.3rem;line-height:1.2}
+@media (max-width:900px){.bride__grid{grid-template-columns:1fr;gap:3rem}.bride__art{max-width:320px;order:-1}}
+
+/* marquee */
+.marquee{background:var(--cherry);color:var(--blush);padding:1.5rem 0;overflow:hidden;white-space:nowrap}
+.marquee__row{display:inline-flex;gap:2.6rem;align-items:center;font-family:var(--serif);font-size:clamp(1.5rem,2.8vw,2.6rem);will-change:transform}
+.marquee__row em{font-family:var(--script);font-style:normal;font-size:1.3em;color:#F6CDD3}
+.marquee__dot{width:12px;height:16px;border-radius:50% 50% 45% 45%/65% 65% 35% 35%;background:var(--blush);display:inline-block}
+
+/* chapter IV: gallery */
+.gallery{padding:clamp(6rem,12vw,10rem) 0;background:var(--petal);overflow:hidden}
+.gallery__head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.col{display:flex;flex-direction:column;gap:1.2rem}
+.tile{position:relative;border-radius:200px 200px 18px 18px;overflow:hidden;aspect-ratio:3/4.2;background:var(--c,#7A1E2E)}
+.col:nth-child(2) .tile{border-radius:18px}
+.tile:nth-child(2){aspect-ratio:3/3.6}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile__sw{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.3rem;color:#fff;background:linear-gradient(160deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 28%),radial-gradient(120% 80% at 30% 10%,rgba(255,255,255,.25),transparent 60%),var(--c)}
+.tile__sw::before{content:"";position:absolute;top:12%;left:18%;width:22%;height:46%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0));filter:blur(2px);transform:rotate(-12deg)}
+.tile__sw b{font-family:var(--serif);font-weight:400;font-size:1.35rem;position:relative}
+.tile__sw small{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;opacity:.85;position:relative}
+.tile.dark .tile__sw{color:var(--wine)}
+.tile.has-photo .tile__sw{background:linear-gradient(transparent 55%,rgba(42,20,24,.65))}
+.tile.has-photo .tile__sw::before{display:none}
+.tile.has-photo.dark .tile__sw{color:#fff}
+@media (max-width:760px){.cols{grid-template-columns:1fr 1fr}.col:nth-child(3){display:none}}
+
+/* proof */
+.proof{background:var(--blush);padding:clamp(5rem,10vw,8rem) 0;text-align:center}
+.stars{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.6rem}
+.stars svg{width:clamp(28px,4vw,44px);height:auto;fill:var(--gold)}
+.proof .h-lg b{font-weight:400;color:var(--cherry)}
+.proof__row{display:flex;justify-content:center;flex-wrap:wrap;gap:3rem;margin-top:3rem}
+.proof__row div{min-width:160px}
+.proof__row b{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4vw,3.4rem);display:block;color:var(--wine);line-height:1}
+.proof__row span{font-size:.85rem;color:var(--muted)}
+
+/* where */
+.where{padding:clamp(6rem,12vw,10rem) 0;background:var(--petal)}
+.where__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3.5rem;align-items:center}
+.where dl{display:grid;gap:1.4rem;margin-top:2.2rem}
+.where dt{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cherry);font-weight:700;margin-bottom:.25rem}
+.where dd{font-family:var(--serif);font-size:1.3rem;line-height:1.35;color:var(--wine)}
+.where dd small{font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+.map{border-radius:240px 240px 24px 24px;overflow:hidden;height:min(560px,110vw);border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.6) sepia(.25) hue-rotate(-15deg)}
+@media (max-width:900px){.where__grid{grid-template-columns:1fr}}
+
+/* builder */
+.builder{background:var(--wine);color:var(--blush);padding:clamp(6rem,12vw,10rem) 0}
+.builder .chapter{color:#E9A9B2}
+.builder .h-lg{color:var(--blush)}
+.builder .h-lg em{color:#F2C3C9}
+.builder .lead{color:rgba(246,233,227,.72)}
+.builder__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;margin-top:3.5rem;align-items:start}
+.q{margin-bottom:2.2rem}
+.q__label{font-family:var(--serif);font-size:1.3rem;margin-bottom:1rem;display:block}
+.q__label i{font-style:normal;color:var(--gold);font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;margin-right:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{padding:.75rem 1.15rem;border-radius:999px;border:1px solid rgba(246,233,227,.3);font-size:.9rem;color:var(--blush);transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.chip:hover{border-color:var(--blush)}
+.chip[aria-pressed="true"]{background:var(--blush);color:var(--wine);border-color:var(--blush)}
+.field{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(246,233,227,.35);color:var(--blush);font:inherit;font-size:1.1rem;padding:.7rem 0;outline:none}
+.field::placeholder{color:rgba(246,233,227,.4)}
+.field:focus{border-color:var(--blush)}
+.phone{background:#120A0C;color:#EEE;border-radius:34px;padding:1rem;position:sticky;top:14vh;box-shadow:0 40px 80px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.06)}
+.phone__bar{display:flex;align-items:center;gap:.8rem;padding:.6rem .6rem 1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.phone__av{width:40px;height:40px;border-radius:50%;flex:none;background:var(--blush);display:grid;place-items:center;font-family:var(--script);color:var(--wine);font-size:1.4rem}
+.phone__bar b{font-size:.92rem;font-weight:600;display:block}
+.phone__bar small{font-size:.72rem;color:#7FD49A}
+.phone__chat{padding:1.4rem .6rem;min-height:290px;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:14px 14px}
+.bubble{background:#1F5C3E;color:#EAF5EE;border-radius:16px 4px 16px 16px;padding:.9rem 1rem;font-size:.9rem;line-height:1.5;margin-left:auto;max-width:92%;white-space:pre-line}
+.bubble time{display:block;text-align:right;font-size:.66rem;opacity:.6;margin-top:.3rem}
+.phone .btn{width:100%;justify-content:center;margin-top:.6rem;--bg:#25D366;--fg:#06260F}
+.phone .btn:hover{color:#fff}
+@media (max-width:900px){.builder__grid{grid-template-columns:1fr;gap:2.6rem}.phone{position:relative;top:0}}
+
+/* faq */
+.faq{padding:clamp(6rem,12vw,9rem) 0;background:var(--blush)}
+.faq__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}
+.acc{border-top:1px solid var(--line)}
+.acc__item{border-bottom:1px solid var(--line)}
+.acc__q{width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.5rem 0;font-family:var(--serif);font-size:clamp(1.15rem,1.7vw,1.4rem);color:var(--wine)}
+.acc__icon{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);flex:none;position:relative;transition:transform .5s var(--ease),background .4s}
+.acc__icon::before,.acc__icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--wine);transform:translate(-50%,-50%)}
+.acc__icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--ease)}
+.acc__item.open .acc__icon{background:var(--wine);transform:rotate(180deg)}
+.acc__item.open .acc__icon::before,.acc__item.open .acc__icon::after{background:#fff}
+.acc__item.open .acc__icon::after{transform:translate(-50%,-50%) rotate(0)}
+.acc__a{height:0;overflow:hidden;transition:height .55s var(--ease)}
+.acc__a p{padding:0 3rem 1.5rem 0;color:var(--muted)}
+@media (max-width:900px){.faq__grid{grid-template-columns:1fr;gap:2rem}}
+
+/* final */
+.final{min-height:100svh;display:grid;place-items:center;text-align:center;background:radial-gradient(90% 70% at 50% 50%,#fff,var(--blush));padding:6rem 0;position:relative;overflow:hidden}
+.final__sig{font-family:var(--script);font-size:clamp(4rem,13vw,10rem);color:var(--cherry);line-height:1}
+.final .lead{margin:1.4rem auto 2.4rem}
+.final__drop{position:absolute;width:120px;height:160px;border-radius:50% 50% 45% 45%/65% 65% 35% 35%;opacity:.9}
+
+/* footer */
+.foot{background:var(--ink);color:rgba(246,233,227,.68);padding:4rem 0 2.4rem;font-size:.9rem}
+.foot__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;padding-bottom:3rem;border-bottom:1px solid rgba(246,233,227,.1)}
+.foot .brand b{color:var(--blush)}
+.foot h4{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:#E9A9B2;margin-bottom:1rem;font-weight:700}
+.foot a:hover{color:#fff}
+.foot__bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;font-size:.78rem;opacity:.6}
+@media (max-width:900px){.foot__grid{grid-template-columns:1fr}}
+
+.fab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:85;display:flex;align-items:center;gap:.7rem;background:#25D366;color:#06260F;border-radius:999px;padding:.85rem 1.2rem .85rem .95rem;font-weight:700;font-size:.88rem;box-shadow:0 18px 40px rgba(0,0,0,.22);transform:translateY(140%);transition:transform .6s var(--ease)}
+.fab.is-on{transform:translateY(0)}
+.fab svg{width:24px;height:24px}
+.fab::after{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid #25D366;animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+@media (max-width:600px){.fab span{display:none}.fab{padding:.95rem}}
+
+.cursor{position:fixed;top:0;left:0;width:12px;height:16px;border-radius:50% 50% 45% 45%/65% 65% 35% 35%;background:var(--cherry);pointer-events:none;z-index:150;transform:translate(-50%,-50%) rotate(-20deg);transition:width .35s var(--ease),height .35s var(--ease),opacity .35s}
+.cursor.is-big{width:40px;height:54px;opacity:.35}
+@media (hover:none),(max-width:900px){.cursor{display:none}}
+
+.reveal{opacity:0;transform:translateY(40px)}
+.no-gsap .reveal{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div><div class="loader__sig">Gaby Bello</div><div class="loader__sub">Nail Designer · Ipanema</div></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><b>Gaby Bello</b><small>Nail Designer · Ipanema</small></a>
+    <div class="nav__right">
+      <nav class="nav__links" aria-label="menu">
+        <a href="#servicos" data-i18n="nav1">Serviços</a><a href="#noivas" data-i18n="nav2">Noivas</a><a href="#portfolio" data-i18n="nav3">Portfólio</a><a href="#estudio" data-i18n="nav4">Estúdio</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button data-lang="pt" aria-pressed="true">PT</button><button data-lang="en" aria-pressed="false">EN</button><button data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn--sm js-wa" href="#" data-i18n="cta_nav">Agendar</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" id="hero">
+  <div class="hero__pin">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow reveal" data-i18n="hero_eye">Nail designer em Ipanema · Rio de Janeiro</span>
+        <h1 class="h-xl hero__title" style="margin-top:1.4rem">
+          <span class="line"><span data-i18n="hero_t1">Suas mãos,</span></span>
+          <span class="line"><span data-i18n="hero_t2">sua <span class="script">assinatura.</span></span></span>
+        </h1>
+        <p class="lead hero__sub reveal" data-i18n="hero_sub">Especialista em alongamentos, nail art e unhas de noiva. Meu prazer é elevar a sua autoestima — uma unha de cada vez.</p>
+        <div class="hero__ctas reveal">
+          <a class="btn js-wa" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.44 1.33-2 1.38-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.04-4.77-4.23-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.84 2.06.91 2.21.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.29-.12.57.17.28.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.29 1.41.28.14.45.12.61-.07.17-.19.71-.83.9-1.12.19-.28.38-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.69-.18 1.38z"/></svg><span data-i18n="hero_cta">Quero agendar</span></a>
+          <a class="btn btn--ghost" href="#historia" data-i18n="hero_cta2">Conhecer o trabalho</a>
+        </div>
+        <div class="hero__meta reveal">
+          <span><i>★</i><span data-i18n="meta1">Avaliações 5 estrelas no Google</span></span>
+          <span><i>✦</i><span data-i18n="meta2">Atendimento em PT · EN · ES</span></span>
+        </div>
+      </div>
+      <svg class="hands" viewBox="0 0 600 560" aria-hidden="true">
+        <defs>
+          <path id="nail" d="M0,-120 C34,-120 46,-74 46,-14 L46,96 C46,116 -46,116 -46,96 L-46,-14 C-46,-74 -34,-120 0,-120Z"/>
+          <clipPath id="nclip"><use href="#nail"/></clipPath>
+          <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8E6B3E"/><stop offset=".35" stop-color="#F3E3C3"/><stop offset=".55" stop-color="#B8935A"/><stop offset="1" stop-color="#6E5030"/></linearGradient>
+          <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9C9BB"/><stop offset=".55" stop-color="#E9C9BB" stop-opacity=".85"/><stop offset="1" stop-color="#E9C9BB" stop-opacity="0"/></linearGradient>
+          <linearGradient id="milk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F1E0DA"/></linearGradient>
+        </defs>
+        <!-- 5 nails, fanned -->
+        <g transform="translate(100 330) rotate(-22)"><rect class="finger" x="-54" y="30" width="108" height="230" rx="54"/><use class="bare" href="#nail"/><g clip-path="url(#nclip)"><rect class="lacq" x="-60" y="-130" width="120" height="250" fill="#7A1E2E"/></g><path class="gloss" d="M-26,-70 C-30,-30 -30,30 -26,70 L-18,70 C-22,30 -22,-30 -16,-74Z"/></g>
+        <g transform="translate(205 250) rotate(-10)"><rect class="finger" x="-54" y="30" width="108" height="230" rx="54"/><use class="bare" href="#nail"/><g clip-path="url(#nclip)"><rect class="lacq" x="-60" y="-130" width="120" height="250" fill="#D9A79A"/></g><path class="gloss" d="M-26,-70 C-30,-30 -30,30 -26,70 L-18,70 C-22,30 -22,-30 -16,-74Z"/></g>
+        <g transform="translate(310 220) rotate(0)"><rect class="finger" x="-54" y="30" width="108" height="230" rx="54"/><use class="bare" href="#nail"/><g clip-path="url(#nclip)"><rect class="lacq" x="-60" y="-130" width="120" height="250" fill="url(#milk)"/><path class="tip" d="M-60,-130 H60 V-62 C30,-80 -30,-80 -60,-62Z" fill="#fff"/></g><path class="gloss" d="M-26,-70 C-30,-30 -30,30 -26,70 L-18,70 C-22,30 -22,-30 -16,-74Z"/></g>
+        <g transform="translate(415 250) rotate(10)"><rect class="finger" x="-54" y="30" width="108" height="230" rx="54"/><use class="bare" href="#nail"/><g clip-path="url(#nclip)"><rect class="lacq" x="-60" y="-130" width="120" height="250" fill="url(#chrome)"/></g><path class="gloss" d="M-26,-70 C-30,-30 -30,30 -26,70 L-18,70 C-22,30 -22,-30 -16,-74Z"/></g>
+        <g transform="translate(518 330) rotate(22)"><rect class="finger" x="-54" y="30" width="108" height="230" rx="54"/><use class="bare" href="#nail"/><g clip-path="url(#nclip)"><rect class="lacq" x="-60" y="-130" width="120" height="250" fill="#F2C9CF"/><g class="art"><circle cx="-14" cy="-40" r="7" fill="#7A1E2E"/><circle cx="16" cy="-6" r="5" fill="#B8935A"/><circle cx="-10" cy="30" r="6" fill="#7A1E2E"/><path d="M8,58 l4,9 9,1 -7,6 2,9 -8,-5 -8,5 2,-9 -7,-6 9,-1z" fill="#fff"/></g></g><path class="gloss" d="M-26,-70 C-30,-30 -30,30 -26,70 L-18,70 C-22,30 -22,-30 -16,-74Z"/></g>
+        <g class="sparks" fill="#B8935A"><path d="M560 90 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5z"/><path d="M40 120 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z"/><path d="M300 30 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4z"/></g>
+      </svg>
+    </div>
+    <div class="palette" aria-hidden="true">
+      <div><i style="background:#7A1E2E"></i>Cherry</div><div><i style="background:#D9A79A"></i>Nude rosé</div><div><i style="background:#fff"></i>French</div><div><i style="background:linear-gradient(135deg,#8E6B3E,#F3E3C3,#B8935A)"></i>Chrome</div><div><i style="background:#F2C9CF"></i>Nail art</div>
+    </div>
+    <div class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v16M6 14l6 6 6-6"/></svg><span data-i18n="hint">role para pintar</span></div>
+  </div>
+</section>
+
+<section class="story" id="historia">
+  <svg class="story__ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="none" stroke="#F6E9E3" stroke-width=".6"/><circle cx="100" cy="100" r="70" fill="none" stroke="#F6E9E3" stroke-width=".6"/><circle cx="100" cy="100" r="44" fill="none" stroke="#F6E9E3" stroke-width=".6"/></svg>
+  <div class="wrap" style="position:relative">
+    <span class="chapter" data-i18n="ch1">Capítulo I — Os detalhes que falam por você</span>
+    <p class="story__text" id="storyText" data-i18n="story">No aperto de mão, no brinde, na foto da aliança — é para as suas mãos que todo mundo olha. Unhas bem feitas não são vaidade: <em>são a forma mais delicada de dizer quem você é.</em></p>
+  </div>
+</section>
+
+<section class="svc" id="servicos">
+  <div class="wrap svc__grid">
+    <div class="svc__head">
+      <span class="chapter" data-i18n="ch2">Capítulo II — O que eu faço</span>
+      <h2 class="h-lg" data-i18n="svc_t">Feitas à mão,<br><em>pensadas para você.</em></h2>
+      <p class="lead" style="margin-top:1.2rem;max-width:36ch" data-i18n="svc_sub">Cada atendimento começa entendendo o seu estilo, a sua rotina e o formato que valoriza as suas mãos.</p>
+      <div class="svc__count"><b id="svcN">01</b><span class="svc__bar"><i id="svcBar"></i></span><small data-i18n="of4">de 04</small></div>
+    </div>
+    <div class="svc__list" id="svcList">
+      <article class="sc"><div class="sc__art"><svg viewBox="0 0 200 200"><rect class="nd f" x="62" y="120" width="76" height="84" rx="38"/>
+<path class="lq f" d="M100 34 C118 34 124 66 124 100 L124 134 C124 144 76 144 76 134 L76 100 C76 66 82 34 100 34Z"/>
+<path class="ln d" pathLength="1" d="M100 24 C124 24 132 62 132 100 L132 138 C132 152 68 152 68 138 L68 100 C68 62 76 24 100 24Z"/>
+<path class="ac d" pathLength="1" d="M80 110 C80 92 120 92 120 110" style="stroke-dasharray:3 4"/>
+<path class="ac d" pathLength="1" d="M158 24 V146 M151 24 H165 M151 146 H165"/>
+<path class="ln d" pathLength="1" d="M88 52 C86 70 86 96 88 116" style="stroke:#fff;stroke-width:4;opacity:.6"/></svg></div><div><span class="sc__n">01</span><h3 data-i18n="s1t">Alongamento</h3><p data-i18n="s1">A minha especialidade. Unhas longas, elegantes e com aparência natural, no formato que valoriza as suas mãos e combina com a sua rotina.</p><span class="sc__tag" data-i18n="s1g">Especialidade</span></div></article>
+      <article class="sc"><div class="sc__art"><svg viewBox="0 0 200 200"><rect class="nd f" x="62" y="120" width="76" height="84" rx="38"/>
+<path class="lq2 f" d="M100 34 C118 34 124 66 124 100 L124 134 C124 144 76 144 76 134 L76 100 C76 66 82 34 100 34Z"/>
+<path class="ln d" pathLength="1" d="M100 24 C124 24 132 62 132 100 L132 138 C132 152 68 152 68 138 L68 100 C68 62 76 24 100 24Z"/>
+<g class="f"><circle cx="100" cy="66" r="7" fill="#7A1E2E"/><circle cx="100" cy="52" r="6" fill="#fff"/><circle cx="112" cy="64" r="6" fill="#fff"/><circle cx="88" cy="64" r="6" fill="#fff"/><circle cx="100" cy="78" r="6" fill="#fff"/><circle cx="100" cy="65" r="4" fill="#B8935A"/></g>
+<circle class="f" cx="90" cy="104" r="4" fill="#7A1E2E"/><circle class="f" cx="110" cy="118" r="3" fill="#B8935A"/>
+<path class="ln d" pathLength="1" d="M178 16 L140 64"/><path class="lq f" d="M140 64 C134 72 126 76 122 74 C122 68 128 62 136 58Z"/></svg></div><div><span class="sc__n">02</span><h3 data-i18n="s2t">Nail art</h3><p data-i18n="s2">Dos detalhes minimalistas aos designs que chamam atenção: arte feita à mão, unha por unha.</p><span class="sc__tag" data-i18n="s2g">Pintado à mão</span></div></article>
+      <article class="sc"><div class="sc__art"><svg viewBox="0 0 200 200"><rect class="nd f" x="62" y="120" width="76" height="84" rx="38"/>
+<path class="nd f" d="M100 34 C118 34 124 66 124 100 L124 134 C124 144 76 144 76 134 L76 100 C76 66 82 34 100 34Z" style="fill:#F4E4DE"/>
+<path class="f" d="M76 76 C78 40 90 34 100 34 C110 34 122 40 124 76 C110 66 90 66 76 76Z" fill="#fff"/>
+<path class="ln d" pathLength="1" d="M100 24 C124 24 132 62 132 100 L132 138 C132 152 68 152 68 138 L68 100 C68 62 76 24 100 24Z"/>
+<circle class="ac d" pathLength="1" cx="100" cy="168" r="30" style="stroke-width:5"/>
+<path class="ln d" pathLength="1" d="M88 138 L100 124 L112 138 Z"/>
+<path class="ac d" pathLength="1" d="M162 40 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4z"/></svg></div><div><span class="sc__n">03</span><h3 data-i18n="s3t">Unhas de noiva</h3><p data-i18n="s3">As suas mãos em cada foto do casamento — pensadas junto com o vestido e o seu estilo.</p><span class="sc__tag" data-i18n="s3g">Para o grande dia</span></div></article>
+      <article class="sc"><div class="sc__art"><svg viewBox="0 0 200 200"><rect class="nd f" x="62" y="120" width="76" height="84" rx="38"/>
+<path class="lq f" d="M100 34 C118 34 124 66 124 100 L124 134 C124 144 76 144 76 134 L76 100 C76 66 82 34 100 34Z"/>
+<path class="ln d" pathLength="1" d="M100 24 C124 24 132 62 132 100 L132 138 C132 152 68 152 68 138 L68 100 C68 62 76 24 100 24Z"/>
+<path class="ac d" pathLength="1" d="M40 70 A66 66 0 0 1 150 40"/><path class="ac d" pathLength="1" d="M150 40 l-2 -14 M150 40 l-14 2"/>
+<path class="ac d" pathLength="1" d="M160 130 A66 66 0 0 1 52 162"/><path class="ac d" pathLength="1" d="M52 162 l2 14 M52 162 l14 -2"/>
+<rect class="ln d" pathLength="1" x="148" y="78" width="14" height="70" rx="7" transform="rotate(20 155 113)"/></svg></div><div><span class="sc__n">04</span><h3 data-i18n="s4t">Manutenção e cuidado</h3><p data-i18n="s4">Para manter o alongamento impecável e as unhas naturais saudáveis, semana após semana.</p><span class="sc__tag" data-i18n="s4g">Sempre perfeitas</span></div></article>
+
+    </div>
+  </div>
+</section>
+
+<section class="bride" id="noivas">
+  <div class="wrap bride__grid">
+    <div>
+      <span class="chapter" data-i18n="ch3">Capítulo III — O grande dia</span>
+      <h2 class="h-lg" data-i18n="bride_t">Para o <em>“sim”</em><br>mais fotografado da sua vida.</h2>
+      <p class="lead" data-i18n="bride_sub">Na troca das alianças, as suas mãos são protagonistas. Clientes já confiaram à Gaby a manicure de noiva antes do casamento — e você pode ser a próxima.</p>
+      <ul class="bride__list">
+        <li><i>i.</i><div><b data-i18n="b1t">Escolha sem pressa</b><span data-i18n="b1">Formato, cor e acabamento pensados junto com o seu vestido e o seu estilo.</span></div></li>
+        <li><i>ii.</i><div><b data-i18n="b2t">Reserve a data com antecedência</b><span data-i18n="b2">Assim você garante o horário ideal perto do casamento.</span></div></li>
+        <li><i>iii.</i><div><b data-i18n="b3t">Chegue ao altar tranquila</b><span data-i18n="b3">Acabamento impecável para durar a festa inteira — e a lua de mel.</span></div></li>
+      </ul>
+      <a class="btn btn--light js-wa-bride" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.44 1.33-2 1.38-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.04-4.77-4.23-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.84 2.06.91 2.21.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.29-.12.57.17.28.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.29 1.41.28.14.45.12.61-.07.17-.19.71-.83.9-1.12.19-.28.38-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.69-.18 1.38z"/></svg><span data-i18n="bride_cta">Reservar a data da noiva</span></a>
+    </div>
+    <div class="bride__art">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <circle class="bd" cx="200" cy="200" r="180" fill="none" stroke="rgba(246,233,227,.18)" stroke-width="1"/>
+        <circle class="bd" cx="200" cy="200" r="140" fill="none" stroke="rgba(246,233,227,.12)" stroke-width="1"/>
+        <g transform="translate(200 210)">
+          <circle class="bd ring1" cx="-38" cy="20" r="62" fill="none" stroke="#B8935A" stroke-width="9"/>
+          <circle class="bd ring2" cx="38" cy="20" r="62" fill="none" stroke="#E7D4AE" stroke-width="9"/>
+          <path class="bd" d="M-38,-42 l-16,-22 h32 z" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+          <path class="bd" d="M-54,-64 l16,-14 16,14" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+        </g>
+        <g fill="#B8935A" class="twinkle"><path d="M320 80 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5z"/><path d="M80 300 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/><path d="M90 90 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee__row" id="marquee">
+  <span>alongamento</span><i class="marquee__dot"></i><em>nail art</em><i class="marquee__dot"></i><span>noivas</span><i class="marquee__dot"></i><em>Ipanema</em><i class="marquee__dot"></i><span>autoestima</span><i class="marquee__dot"></i><em>detalhes</em><i class="marquee__dot"></i>
+  <span>alongamento</span><i class="marquee__dot"></i><em>nail art</em><i class="marquee__dot"></i><span>noivas</span><i class="marquee__dot"></i><em>Ipanema</em><i class="marquee__dot"></i><span>autoestima</span><i class="marquee__dot"></i><em>detalhes</em><i class="marquee__dot"></i>
+</div></div>
+
+<section class="gallery" id="portfolio">
+  <div class="wrap">
+    <div class="gallery__head">
+      <div><span class="chapter" data-i18n="ch4">Capítulo IV — O portfólio</span><h2 class="h-lg" data-i18n="gal_t">Cada mão,<br><em>uma obra.</em></h2></div>
+      <a class="btn btn--ghost" href="https://www.instagram.com/gabybellonaildesigner/" target="_blank" rel="noopener" data-i18n="gal_cta">Ver mais no Instagram</a>
+    </div>
+    <div class="cols" id="cols">
+      <div class="col">
+        <div class="tile" style="--c:#7A1E2E"><img data-photo="1" alt=""><div class="tile__sw"><small>01</small><b>Cherry Ipanema</b></div></div>
+        <div class="tile dark" style="--c:#F3E4DE"><img data-photo="2" alt=""><div class="tile__sw"><small>02</small><b>French</b></div></div>
+      </div>
+      <div class="col">
+        <div class="tile dark" style="--c:#D9A79A"><img data-photo="3" alt=""><div class="tile__sw"><small>03</small><b>Nude Leblon</b></div></div>
+        <div class="tile" style="--c:linear-gradient(135deg,#8E6B3E,#E9D5AE 45%,#B8935A 60%,#6E5030)"><img data-photo="4" alt=""><div class="tile__sw" style="background:linear-gradient(160deg,rgba(255,255,255,.35),transparent 30%),linear-gradient(135deg,#8E6B3E,#E9D5AE 45%,#B8935A 60%,#6E5030)"><small>04</small><b>Chrome Gold</b></div></div>
+      </div>
+      <div class="col">
+        <div class="tile dark" style="--c:#F2C9CF"><img data-photo="5" alt=""><div class="tile__sw"><small>05</small><b>Nail art</b></div></div>
+        <div class="tile" style="--c:#2A1418"><img data-photo="6" alt=""><div class="tile__sw"><small>06</small><b>Noir</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="avaliacoes">
+  <div class="wrap">
+    <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg></div>
+    <h2 class="h-lg" data-i18n="proof_t"><b><span data-count="51">0</span> avaliações</b> no Google,<br>quase todas 5 estrelas.</h2>
+    <div class="proof__row">
+      <div class="reveal"><b>PT · EN · ES</b><span data-i18n="p1">atendimento em 3 idiomas</span></div>
+      <div class="reveal"><b>Ipanema</b><span data-i18n="p2">a poucas quadras da praia</span></div>
+      <div class="reveal"><b>PIX · <span data-i18n="cards">cartão</span></b><span data-i18n="p3">formas de pagamento</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="where" id="estudio">
+  <div class="wrap where__grid">
+    <div>
+      <span class="chapter" data-i18n="ch5">Capítulo V — O estúdio</span>
+      <h2 class="h-lg" data-i18n="where_t">No coração<br><em>de Ipanema.</em></h2>
+      <dl>
+        <div><dt data-i18n="d1">Endereço</dt><dd>Rua Visconde de Pirajá, 281 — Loja G<br><small>Ipanema · Rio de Janeiro/RJ · 22410-001</small></dd></div>
+        <div><dt data-i18n="d2">Horários</dt><dd data-i18n="hours">Terça a sexta · 10h30 às 19h<br>Sábado · 10h30 às 16h<br><small>Domingo e segunda: fechado</small></dd></div>
+        <div><dt data-i18n="d3">Contato</dt><dd><a class="js-wa" href="#">(21) 96999-2400</a><br><small><a href="https://www.instagram.com/gabybellonaildesigner/" target="_blank" rel="noopener">@gabybellonaildesigner</a></small></dd></div>
+      </dl>
+    </div>
+    <div class="map reveal"><iframe loading="lazy" title="Mapa" src="https://maps.google.com/maps?q=Rua%20Visconde%20de%20Piraj%C3%A1%2C%20281%20-%20Ipanema%2C%20Rio%20de%20Janeiro&z=16&output=embed"></iframe></div>
+  </div>
+</section>
+
+<section class="builder" id="agendar">
+  <div class="wrap">
+    <span class="chapter" data-i18n="ch6">Capítulo VI — A sua vez</span>
+    <h2 class="h-lg" data-i18n="bld_t">Monte o seu pedido<br><em>em 20 segundos.</em></h2>
+    <p class="lead" style="margin-top:1.2rem" data-i18n="bld_sub">Escolha as opções e a mensagem chega pronta no WhatsApp da Gaby — é só tocar em enviar.</p>
+    <div class="builder__grid">
+      <div>
+        <div class="q"><span class="q__label"><i>01</i><span data-i18n="q1">O que você quer fazer?</span></span>
+          <div class="chips" data-group="svc">
+            <button class="chip" aria-pressed="true" data-v="0">Alongamento</button><button class="chip" aria-pressed="false" data-v="1">Manutenção</button><button class="chip" aria-pressed="false" data-v="2">Nail art</button><button class="chip" aria-pressed="false" data-v="3">Unhas de noiva</button><button class="chip" aria-pressed="false" data-v="4">Manicure</button>
+          </div></div>
+        <div class="q"><span class="q__label"><i>02</i><span data-i18n="q2">Qual dia é melhor?</span></span>
+          <div class="chips" data-group="day"><button class="chip" aria-pressed="true" data-v="0">Terça a sexta</button><button class="chip" aria-pressed="false" data-v="1">Sábado</button><button class="chip" aria-pressed="false" data-v="2">Tanto faz</button></div></div>
+        <div class="q"><span class="q__label"><i>03</i><span data-i18n="q3">E o período?</span></span>
+          <div class="chips" data-group="per"><button class="chip" aria-pressed="false" data-v="0">Manhã</button><button class="chip" aria-pressed="true" data-v="1">Tarde</button></div></div>
+        <div class="q"><span class="q__label"><i>04</i><span data-i18n="q4">Como posso te chamar?</span></span><input class="field" id="nome" type="text" placeholder="Seu nome" autocomplete="given-name"></div>
+      </div>
+      <div class="phone">
+        <div class="phone__bar"><div class="phone__av">G</div><div><b>Gaby Bello · Nail Designer</b><small>online</small></div></div>
+        <div class="phone__chat"><div class="bubble" id="preview"></div></div>
+        <a class="btn" id="sendWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.44 1.33-2 1.38-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.04-4.77-4.23-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.84 2.06.91 2.21.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.29-.12.57.17.28.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.29 1.41.28.14.45.12.61-.07.17-.19.71-.83.9-1.12.19-.28.38-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.69-.18 1.38z"/></svg><span data-i18n="send">Enviar no WhatsApp</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="duvidas">
+  <div class="wrap faq__grid">
+    <div><span class="chapter" data-i18n="ch7">Antes de você vir…</span><h2 class="h-lg" data-i18n="faq_t">Dúvidas<br><em>frequentes</em></h2></div>
+    <div class="acc">
+      <div class="acc__item"><button class="acc__q"><span data-i18n="f1q">Você atende em inglês e espanhol?</span><span class="acc__icon"></span></button><div class="acc__a"><p data-i18n="f1a">Sim! O atendimento é em português, inglês e espanhol — perfeito para quem está visitando o Rio.</p></div></div>
+      <div class="acc__item"><button class="acc__q"><span data-i18n="f2q">Como faço para agendar?</span><span class="acc__icon"></span></button><div class="acc__a"><p data-i18n="f2a">Pelo WhatsApp: escolha o serviço e o melhor dia, envie a mensagem e a Gaby confirma o horário com você.</p></div></div>
+      <div class="acc__item"><button class="acc__q"><span data-i18n="f3q">Quanto tempo dura o alongamento?</span><span class="acc__icon"></span></button><div class="acc__a"><p data-i18n="f3a">Depende da técnica e dos seus cuidados. A Gaby te orienta sobre a manutenção ideal para manter as unhas sempre lindas.</p></div></div>
+      <div class="acc__item"><button class="acc__q"><span data-i18n="f4q">Quais as formas de pagamento?</span><span class="acc__icon"></span></button><div class="acc__a"><p data-i18n="f4a">PIX, cartão de crédito e débito, dinheiro e transferência.</p></div></div>
+      <div class="acc__item"><button class="acc__q"><span data-i18n="f5q">Quanto custa?</span><span class="acc__icon"></span></button><div class="acc__a"><p data-i18n="f5a">Os valores variam conforme o serviço e o design escolhido. Peça a tabela pelo WhatsApp.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="final">
+  <span class="final__drop" style="background:#7A1E2E;left:8%;top:18%;transform:rotate(-24deg)"></span>
+  <span class="final__drop" style="background:#D9A79A;right:10%;top:12%;transform:rotate(18deg);width:90px;height:120px"></span>
+  <span class="final__drop" style="background:#F2C9CF;left:14%;bottom:12%;transform:rotate(14deg);width:70px;height:94px"></span>
+  <span class="final__drop" style="background:linear-gradient(135deg,#8E6B3E,#F3E3C3,#B8935A);right:14%;bottom:16%;transform:rotate(-12deg);width:80px;height:106px"></span>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow reveal" data-i18n="fin_eye">Pronta para a transformação?</span>
+    <div class="final__sig reveal">Gaby Bello</div>
+    <p class="lead reveal" data-i18n="fin_sub">Unhas que acompanham o seu dia, a sua festa e o seu grande momento. Escolha o seu horário e venha para Ipanema.</p>
+    <a class="btn reveal js-wa" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.44 1.33-2 1.38-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.04-4.77-4.23-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.84 2.06.91 2.21.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.29-.12.57.17.28.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.29 1.41.28.14.45.12.61-.07.17-.19.71-.83.9-1.12.19-.28.38-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.69-.18 1.38z"/></svg><span data-i18n="fin_cta">Agendar meu horário</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div><div class="brand"><b>Gaby Bello</b><small>Nail Designer · Ipanema</small></div><p style="margin-top:1.2rem;max-width:36ch" data-i18n="foot">Especialista em alongamentos, nail art e unhas de noiva.</p></div>
+      <div><h4 data-i18n="d1">Endereço</h4><p>Rua Visconde de Pirajá, 281 — Loja G<br>Ipanema · Rio de Janeiro/RJ</p></div>
+      <div><h4 data-i18n="d3">Contato</h4><p><a class="js-wa" href="#">WhatsApp (21) 96999-2400</a><br><a href="https://www.instagram.com/gabybellonaildesigner/" target="_blank" rel="noopener">@gabybellonaildesigner</a></p></div>
+    </div>
+    <div class="foot__bottom"><span>© <span id="yr"></span> Gaby Bello Nail Designer</span><span>Ipanema · Rio de Janeiro</span></div>
+  </div>
+</footer>
+
+<a class="fab js-wa" id="fab" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.69-1.44 1.33-2 1.38-.51.05-1 .24-3.36-.7-2.84-1.12-4.63-4.04-4.77-4.23-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.84 2.06.91 2.21.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.3.37-.42.5-.14.14-.29.29-.12.57.17.28.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.29 1.41.28.14.45.12.61-.07.17-.19.71-.83.9-1.12.19-.28.38-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.69-.18 1.38z"/></svg><span data-i18n="cta_nav">Agendar</span></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ===== CONFIG =====
+   Fotos do portfólio: coloque arquivos fotos/1.jpg ... fotos/6.jpg ao lado deste index.html.
+   Se uma foto não existir, o card mostra a amostra de cor no lugar. */
+const CONFIG={whatsapp:'5521969992400',photoDir:'fotos/',photoExt:'.jpg'};
+
+const I18N={
+ en:{nav1:'Services',nav2:'Brides',nav3:'Portfolio',nav4:'Studio',cta_nav:'Book now',hero_eye:'Nail designer in Ipanema · Rio de Janeiro',hero_t1:'Your hands,',hero_t2:'your <span class="script">signature.</span>',hero_sub:'Nail extension specialist, nail art and bridal nails. My joy is lifting your self-esteem — one nail at a time.',hero_cta:'Book my appointment',hero_cta2:'See the work',meta1:'5-star reviews on Google',meta2:'Service in PT · EN · ES',hint:'scroll to paint',ch1:'Chapter I — The details that speak for you',story:'In a handshake, a toast, the photo of the ring — everyone looks at your hands. Beautiful nails are not vanity: <em>they are the most delicate way of saying who you are.</em>',ch2:'Chapter II — What I do',svc_t:'Handmade,<br><em>designed for you.</em>',svc_sub:'Every appointment starts by understanding your style, your routine and the shape that flatters your hands.',of4:'of 04',
+  s1t:'Nail extensions',s1:'My specialty. Long, elegant and natural-looking nails, shaped to suit your hands and your routine.',s1g:'Specialty',s2t:'Nail art',s2:'From minimal details to statement designs: art made by hand, piece by piece.',s2g:'Hand-painted',s3t:'Bridal nails',s3:'Your hands in every wedding photo — planned together with your dress and your style.',s3g:'For the big day',s4t:'Maintenance & care',s4:'To keep your extensions flawless and your natural nails healthy, week after week.',s4g:'Always perfect',
+  ch3:'Chapter III — The big day',bride_t:'For the most photographed<br><em>“yes”</em> of your life.',bride_sub:'When the rings are exchanged, your hands take center stage. Brides have already trusted Gaby with their wedding manicure — and you could be next.',b1t:'Choose without rush',b1:'Shape, color and finish designed together with your dress and style.',b2t:'Book your date in advance',b2:'So you secure the ideal slot close to the wedding.',b3t:'Walk down the aisle relaxed',b3:'A flawless finish that lasts the whole party — and the honeymoon.',bride_cta:'Book my bridal date',
+  ch4:'Chapter IV — The portfolio',gal_t:'Every hand,<br><em>a masterpiece.</em>',gal_cta:'See more on Instagram',proof_t:'<b><span data-count="51">0</span> reviews</b> on Google,<br>almost all 5 stars.',p1:'service in 3 languages',p2:'a few blocks from the beach',cards:'card',p3:'payment methods',
+  ch5:'Chapter V — The studio',where_t:'In the heart<br><em>of Ipanema.</em>',d1:'Address',d2:'Opening hours',d3:'Contact',hours:'Tuesday to Friday · 10:30am – 7pm<br>Saturday · 10:30am – 4pm<br><small>Sunday & Monday: closed</small>',
+  ch6:'Chapter VI — Your turn',bld_t:'Build your request<br><em>in 20 seconds.</em>',bld_sub:'Pick the options and the message arrives ready on Gaby’s WhatsApp — just tap send.',q1:'What would you like?',q2:'Which day works best?',q3:'Morning or afternoon?',q4:'What’s your name?',send:'Send on WhatsApp',
+  ch7:'Before you come…',faq_t:'Frequently<br><em>asked</em>',f1q:'Do you speak English and Spanish?',f1a:'Yes! Service is available in Portuguese, English and Spanish — perfect if you are visiting Rio.',f2q:'How do I book?',f2a:'Via WhatsApp: choose the service and the best day, send the message and Gaby will confirm your time.',f3q:'How long do extensions last?',f3a:'It depends on the technique and your care. Gaby will guide you on the ideal maintenance to keep them beautiful.',f4q:'Which payment methods do you accept?',f4a:'PIX, credit and debit cards, cash and bank transfer.',f5q:'How much does it cost?',f5a:'Prices vary according to the service and design. Ask for the price list on WhatsApp.',
+  fin_eye:'Ready for your transformation?',fin_sub:'Nails that keep up with your day, your party and your big moment. Pick your time and come to Ipanema.',fin_cta:'Book my appointment',foot:'Nail extension specialist, nail art and bridal nails.'},
+ es:{nav1:'Servicios',nav2:'Novias',nav3:'Portafolio',nav4:'Estudio',cta_nav:'Reservar',hero_eye:'Nail designer en Ipanema · Río de Janeiro',hero_t1:'Tus manos,',hero_t2:'tu <span class="script">firma.</span>',hero_sub:'Especialista en extensiones, nail art y uñas de novia. Mi placer es elevar tu autoestima — una uña a la vez.',hero_cta:'Quiero reservar',hero_cta2:'Ver el trabajo',meta1:'Reseñas 5 estrellas en Google',meta2:'Atención en PT · EN · ES',hint:'desliza para pintar',ch1:'Capítulo I — Los detalles que hablan por ti',story:'En un apretón de manos, un brindis, la foto del anillo — todos miran tus manos. Unas uñas bonitas no son vanidad: <em>son la forma más delicada de decir quién eres.</em>',ch2:'Capítulo II — Lo que hago',svc_t:'Hechas a mano,<br><em>pensadas para ti.</em>',svc_sub:'Cada cita empieza entendiendo tu estilo, tu rutina y la forma que más favorece tus manos.',of4:'de 04',
+  s1t:'Extensiones',s1:'Mi especialidad. Uñas largas, elegantes y naturales, con la forma ideal para tus manos y tu rutina.',s1g:'Especialidad',s2t:'Nail art',s2:'Desde detalles minimalistas hasta diseños llamativos: arte hecho a mano, uña por uña.',s2g:'Pintado a mano',s3t:'Uñas de novia',s3:'Tus manos en cada foto de la boda — pensadas junto con tu vestido y tu estilo.',s3g:'Para el gran día',s4t:'Mantenimiento y cuidado',s4:'Para mantener tus extensiones perfectas y tus uñas naturales sanas, semana tras semana.',s4g:'Siempre perfectas',
+  ch3:'Capítulo III — El gran día',bride_t:'Para el <em>“sí”</em><br>más fotografiado de tu vida.',bride_sub:'En el intercambio de anillos, tus manos son protagonistas. Novias ya confiaron a Gaby su manicura de boda — y tú puedes ser la próxima.',b1t:'Elige sin prisa',b1:'Forma, color y acabado pensados junto con tu vestido y tu estilo.',b2t:'Reserva la fecha con anticipación',b2:'Así aseguras el horario ideal cerca de la boda.',b3t:'Llega al altar tranquila',b3:'Un acabado impecable que dura toda la fiesta — y la luna de miel.',bride_cta:'Reservar fecha de novia',
+  ch4:'Capítulo IV — El portafolio',gal_t:'Cada mano,<br><em>una obra.</em>',gal_cta:'Ver más en Instagram',proof_t:'<b><span data-count="51">0</span> reseñas</b> en Google,<br>casi todas de 5 estrellas.',p1:'atención en 3 idiomas',p2:'a pocas cuadras de la playa',cards:'tarjeta',p3:'formas de pago',
+  ch5:'Capítulo V — El estudio',where_t:'En el corazón<br><em>de Ipanema.</em>',d1:'Dirección',d2:'Horarios',d3:'Contacto',hours:'Martes a viernes · 10:30 a 19:00<br>Sábado · 10:30 a 16:00<br><small>Domingo y lunes: cerrado</small>',
+  ch6:'Capítulo VI — Tu turno',bld_t:'Arma tu pedido<br><em>en 20 segundos.</em>',bld_sub:'Elige las opciones y el mensaje llega listo al WhatsApp de Gaby — solo toca enviar.',q1:'¿Qué te gustaría hacer?',q2:'¿Qué día te queda mejor?',q3:'¿Mañana o tarde?',q4:'¿Cómo te llamas?',send:'Enviar por WhatsApp',
+  ch7:'Antes de venir…',faq_t:'Preguntas<br><em>frecuentes</em>',f1q:'¿Atiendes en inglés y español?',f1a:'¡Sí! La atención es en portugués, inglés y español — ideal si estás visitando Río.',f2q:'¿Cómo reservo?',f2a:'Por WhatsApp: elige el servicio y el mejor día, envía el mensaje y Gaby confirma tu horario.',f3q:'¿Cuánto duran las extensiones?',f3a:'Depende de la técnica y de tus cuidados. Gaby te orienta sobre el mantenimiento ideal.',f4q:'¿Qué formas de pago aceptas?',f4a:'PIX, tarjeta de crédito y débito, efectivo y transferencia.',f5q:'¿Cuánto cuesta?',f5a:'Los precios varían según el servicio y el diseño. Pide la lista de precios por WhatsApp.',
+  fin_eye:'¿Lista para la transformación?',fin_sub:'Uñas que acompañan tu día, tu fiesta y tu gran momento. Elige tu horario y ven a Ipanema.',fin_cta:'Reservar mi horario',foot:'Especialista en extensiones, nail art y uñas de novia.'}
+};
+const OPTS={
+ pt:{svc:['Alongamento','Manutenção','Nail art','Unhas de noiva','Manicure'],day:['Terça a sexta','Sábado','Tanto faz'],per:['Manhã','Tarde'],ph:'Seu nome'},
+ en:{svc:['Nail extensions','Maintenance','Nail art','Bridal nails','Manicure'],day:['Tuesday to Friday','Saturday','Any day'],per:['Morning','Afternoon'],ph:'Your name'},
+ es:{svc:['Extensiones','Mantenimiento','Nail art','Uñas de novia','Manicura'],day:['Martes a viernes','Sábado','Cualquier día'],per:['Mañana','Tarde'],ph:'Tu nombre'}
+};
+const MSG={
+ pt:(n,s,d,p)=>`Oi, Gaby! ${n?`Aqui é ${n}. `:''}Vi o seu site e quero agendar 💅\n\n• Serviço: ${s}\n• Melhor dia: ${d}\n• Período: ${p}\n\nQuais horários você tem disponíveis e qual o valor?`,
+ en:(n,s,d,p)=>`Hi Gaby! ${n?`I'm ${n}. `:''}I found your website and I'd like to book an appointment 💅\n\n• Service: ${s}\n• Best day: ${d}\n• Time: ${p}\n\nWhat times do you have available, and what's the price?`,
+ es:(n,s,d,p)=>`¡Hola, Gaby! ${n?`Soy ${n}. `:''}Vi tu sitio web y quiero reservar 💅\n\n• Servicio: ${s}\n• Mejor día: ${d}\n• Horario: ${p}\n\n¿Qué horarios tienes disponibles y cuál es el precio?`
+};
+const DEF={pt:'Oi, Gaby! Vi o seu site e quero agendar um horário. Quais horários você tem disponíveis?',en:"Hi Gaby! I found your website and I'd like to book an appointment. What times do you have available?",es:'¡Hola, Gaby! Vi tu sitio web y quiero reservar un horario. ¿Qué horarios tienes disponibles?'};
+const BRIDE={pt:'Oi, Gaby! Vi o seu site e vou me casar 💍 Quero reservar as unhas de noiva. A data do casamento é: ',en:"Hi Gaby! I found your website and I'm getting married 💍 I'd like to book bridal nails. The wedding date is: ",es:'¡Hola, Gaby! Vi tu sitio web y me voy a casar 💍 Quiero reservar uñas de novia. La fecha de la boda es: '};
+
+const wa=m=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(m)}`;
+let lang='pt';
+const PT={};document.querySelectorAll('[data-i18n]').forEach(el=>{PT[el.dataset.i18n]??=el.innerHTML});
+const state={svc:0,day:0,per:1};
+const nome=document.getElementById('nome'),preview=document.getElementById('preview'),send=document.getElementById('sendWa');
+function render(){
+  const o=OPTS[lang];const m=MSG[lang](nome.value.trim(),o.svc[state.svc],o.day[state.day],o.per[state.per]);
+  preview.textContent=m;const t=document.createElement('time');t.textContent=new Date().toLocaleTimeString(lang==='en'?'en-US':'pt-BR',{hour:'2-digit',minute:'2-digit'})+' ✓✓';preview.appendChild(t);send.href=wa(m);
+}
+function setLang(l){
+  lang=l;document.documentElement.lang=l==='pt'?'pt-BR':l;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;const v=l==='pt'?PT[k]:I18N[l][k];if(v!=null)el.innerHTML=v});
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+  document.querySelectorAll('.chips').forEach(g=>g.querySelectorAll('.chip').forEach(c=>c.textContent=OPTS[l][g.dataset.group][+c.dataset.v]));
+  nome.placeholder=OPTS[l].ph;
+  document.querySelectorAll('.js-wa').forEach(a=>{a.href=wa(DEF[l]);a.target='_blank';a.rel='noopener'});
+  document.querySelectorAll('.js-wa-bride').forEach(a=>{a.href=wa(BRIDE[l]);a.target='_blank';a.rel='noopener'});
+  document.querySelectorAll('[data-count]').forEach(c=>c.textContent=c.dataset.count);
+  render();
+  try{localStorage.setItem('gb-lang',l)}catch(e){}
+  if(window.ScrollTrigger)ScrollTrigger.refresh();
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;g.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');state[g.dataset.group]=+b.dataset.v;render();if(window.gsap)gsap.fromTo(preview,{scale:.97,opacity:.6},{scale:1,opacity:1,duration:.4,ease:'power3.out'})}));
+nome.addEventListener('input',render);
+let saved=null;try{saved=localStorage.getItem('gb-lang')}catch(e){}
+const nav0=(navigator.language||'pt').slice(0,2);
+const initial=saved||(nav0==='en'?'en':nav0==='es'?'es':'pt');
+setLang(initial);
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* portfolio photos (optional) */
+document.querySelectorAll('img[data-photo]').forEach(img=>{
+  img.addEventListener('load',()=>img.closest('.tile').classList.add('has-photo'));
+  img.addEventListener('error',()=>img.remove());
+  img.src=CONFIG.photoDir+img.dataset.photo+CONFIG.photoExt;
+});
+
+document.querySelectorAll('.acc__item').forEach(it=>{const q=it.querySelector('.acc__q'),a=it.querySelector('.acc__a');q.addEventListener('click',()=>{const o=it.classList.toggle('open');a.style.height=o?a.scrollHeight+'px':'0px'})});
+
+const nav=document.getElementById('nav'),fab=document.getElementById('fab');let lastY=0;
+addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('is-solid',y>40);nav.classList.toggle('is-hidden',y>lastY&&y>innerHeight*2.6);lastY=y;fab.classList.toggle('is-on',y>innerHeight*1.2)},{passive:true});
+const cur=document.getElementById('cursor');
+if(matchMedia('(hover:hover)').matches){addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});document.addEventListener('mouseover',e=>cur.classList.toggle('is-big',!!e.target.closest('a,button')))}
+
+function splitWords(el){(function s(n){[...n.childNodes].forEach(ch=>{if(ch.nodeType===3){const f=document.createDocumentFragment();ch.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(w));return}const sp=document.createElement('span');sp.className='w';sp.textContent=w;f.appendChild(sp)});ch.replaceWith(f)}else s(ch)})})(el)}
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const killLoader=()=>{const l=document.getElementById('loader');if(l)l.remove()};
+if(!window.gsap||!window.ScrollTrigger||reduce){
+  document.body.classList.add('no-gsap');killLoader();
+} else {
+  gsap.registerPlugin(ScrollTrigger);
+  if(window.Lenis){const lenis=new Lenis({duration:1.15,smoothWheel:true});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1&&document.querySelector(id)){e.preventDefault();lenis.scrollTo(id,{offset:-10})}}));}
+  gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
+
+  // intro
+  gsap.timeline()
+    .to('.loader__sig',{clipPath:'inset(0 0% 0 0)',duration:1.5,ease:'power2.inOut'})
+    .to('.loader__sub',{opacity:.8,letterSpacing:'.7em',duration:.9,ease:'expo.out'},'-=.6')
+    .to('#loader',{yPercent:-100,duration:1,ease:'expo.inOut'},'+=.25')
+    .add(killLoader)
+    .from('.hero__title .line>span',{yPercent:115,duration:1.2,stagger:.12,ease:'expo.out'},'-=.55')
+    .from('.hands > g:not(.sparks)',{y:140,opacity:0,duration:1.3,stagger:.07,ease:'expo.out'},'-=1.1')
+    .to('.hero .reveal',{opacity:1,y:0,duration:1,stagger:.1,ease:'expo.out'},'-=1');
+
+  // hero: pinned, scroll paints the nails
+  const lac=gsap.utils.toArray('.hands .lacq'),gl=gsap.utils.toArray('.hands .gloss'),sw=gsap.utils.toArray('.palette div');
+  gsap.set(lac,{scaleY:0,transformOrigin:'50% 100%'});
+  gsap.set(['.hands .tip','.hands .art'],{opacity:0});
+  gsap.set(gl,{opacity:0});
+  const tl=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:()=>'+='+innerHeight*1.4,pin:'.hero__pin',scrub:.7,anticipatePin:1}});
+  lac.forEach((r,i)=>{tl.to(r,{scaleY:1,duration:1,ease:'power1.inOut',onStart:()=>sw[i]&&sw[i].classList.add('on'),onReverseComplete:()=>sw[i]&&sw[i].classList.remove('on')},i*.8)});
+  tl.to('.hands .tip',{opacity:1,duration:.4},2.2).to('.hands .art',{opacity:1,duration:.5},4)
+    .to(gl,{opacity:.55,stagger:.08,duration:.5},4.2)
+    .to('.hands .sparks path',{scale:1.6,rotate:90,transformOrigin:'50% 50%',duration:.8,stagger:.1},4.3)
+    .to('.hint',{opacity:0,duration:.3},0);
+
+  // story words
+  const st=document.getElementById('storyText');splitWords(st);
+  gsap.to('#storyText .w',{opacity:1,stagger:.05,ease:'none',scrollTrigger:{trigger:'.story',start:'top 65%',end:'bottom 70%',scrub:.6}});
+  gsap.to('.story__ring',{rotate:120,scale:1.2,ease:'none',scrollTrigger:{trigger:'.story',start:'top bottom',end:'bottom top',scrub:true}});
+
+  gsap.utils.toArray('.reveal').filter(el=>!el.closest('.hero')).forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
+
+  // services: vertical cards, drawings draw on scroll, lacquer fills
+  gsap.utils.toArray('.sc').forEach((c,i)=>{
+    gsap.from(c,{y:90,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:c,start:'top 88%'}});
+    const ds=c.querySelectorAll('.d');gsap.set(ds,{strokeDasharray:1,strokeDashoffset:1,opacity:0});
+    gsap.to(ds,{strokeDashoffset:0,opacity:1,stagger:.05,ease:'none',scrollTrigger:{trigger:c,start:'top 82%',end:'center 50%',scrub:.6}});
+    const fills=c.querySelectorAll('.f');gsap.from(fills,{scale:0,transformOrigin:'50% 50%',stagger:.08,duration:.7,ease:'back.out(1.8)',scrollTrigger:{trigger:c,start:'center 62%'}});
+    ScrollTrigger.create({trigger:c,start:'top center',end:'bottom center',onToggle:s=>{if(s.isActive)document.getElementById('svcN').textContent='0'+(i+1)}});
+  });
+  gsap.to('#svcBar',{scaleX:1,ease:'none',scrollTrigger:{trigger:'#svcList',start:'top center',end:'bottom center',scrub:true}});
+
+  // bride rings
+  const bd=gsap.utils.toArray('.bride .bd');bd.forEach(p=>p.setAttribute('pathLength','1'));
+  gsap.set(bd,{strokeDasharray:1,strokeDashoffset:1});
+  gsap.to(bd,{strokeDashoffset:0,stagger:.12,ease:'none',scrollTrigger:{trigger:'.bride',start:'top 70%',end:'center 45%',scrub:.8}});
+  gsap.to('.twinkle path',{scale:1.5,rotate:90,transformOrigin:'50% 50%',repeat:-1,yoyo:true,duration:1.6,stagger:.4,ease:'sine.inOut'});
+  gsap.from('.bride__list li',{x:40,opacity:0,stagger:.12,duration:1,ease:'expo.out',scrollTrigger:{trigger:'.bride__list',start:'top 80%'}});
+
+  // marquee
+  const mq=document.getElementById('marquee');let mx=0,dir=1;ScrollTrigger.create({onUpdate:s=>{dir=s.direction}});
+  gsap.ticker.add(()=>{mx-=.6*dir;const w=mq.scrollWidth/2;if(mx<=-w)mx+=w;if(mx>0)mx-=w;mq.style.transform=`translateX(${mx}px)`});
+
+  // gallery: columns at different speeds
+  const cols=gsap.utils.toArray('.col');
+  [-60,60,-30].forEach((v,i)=>cols[i]&&gsap.fromTo(cols[i],{y:-v},{y:v,ease:'none',scrollTrigger:{trigger:'#cols',start:'top bottom',end:'bottom top',scrub:true}}));
+  gsap.utils.toArray('.tile').forEach(t=>gsap.from(t,{clipPath:'inset(100% 0 0 0 round 200px)',duration:1.3,ease:'expo.out',scrollTrigger:{trigger:t,start:'top 92%'}}));
+
+  // proof
+  gsap.from('.stars svg',{scale:0,rotate:-90,stagger:.1,duration:.8,ease:'back.out(2)',scrollTrigger:{trigger:'.proof',start:'top 75%'}});
+  ScrollTrigger.create({trigger:'.proof',start:'top 70%',once:true,onEnter:()=>document.querySelectorAll('[data-count]').forEach(c=>{const o={v:0};gsap.to(o,{v:+c.dataset.count,duration:2,ease:'power3.out',onUpdate:()=>{const el=document.querySelector('[data-count]');if(el)el.textContent=Math.round(o.v)}})})});
+
+  gsap.from('.where dl>div',{y:30,opacity:0,stagger:.12,duration:1,ease:'expo.out',scrollTrigger:{trigger:'.where dl',start:'top 85%'}});
+  gsap.from('.phone',{y:120,rotate:4,opacity:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:'.builder__grid',start:'top 80%'}});
+  gsap.from('.chip',{y:20,opacity:0,stagger:.03,duration:.8,ease:'expo.out',scrollTrigger:{trigger:'.builder__grid',start:'top 80%'}});
+  gsap.utils.toArray('.final__drop').forEach((d,i)=>gsap.from(d,{y:i%2?-200:200,rotate:'+=60',opacity:0,ease:'none',scrollTrigger:{trigger:'.final',start:'top bottom',end:'center center',scrub:1}}));
+  addEventListener('load',()=>ScrollTrigger.refresh());
+}
+</script>
+</body>
+</html>
